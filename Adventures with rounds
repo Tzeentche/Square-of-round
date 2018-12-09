@@ -1,0 +1,33 @@
+import java.util.*;
+
+public class Square {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		double d1, d2;
+		try {
+			System.out.println("Enter positive value of diametr for first round");
+			Scanner in = new Scanner(System.in);
+			d1 = in.nextInt();
+			System.out.println("Enter positive value of diametr for second round");
+			d2 = in.nextInt();
+		}	catch (InputMismatchException e) {
+			System.out.println("ARRRGH!!! Wrong value!!!");
+			throw e;
+		}
+		d1 = (d1 < 0) ? d1 *= -1 : d1;
+		d2 = (d2 < 0) ? d2 *= -1 : d2;
+		if (d1 < d2) {
+			d1 = d2;
+		} else if (d1 > d2) {
+			System.out.println("Square of biggest round is " + (d1/2)*(d1/2)*3.14);
+		}
+		if (d1 == d2) {
+			System.out.println("Squares are equal: " + (d1/2)*(d1/2)*3.14);
+		}
+	}
+
+}
